@@ -60,10 +60,19 @@ render() {
 }
 ```
 
-6. Inline ternary for className
+6. Function for calculating className
 
 ```javascript
 render() {
+
+  const statusIcon = (done) => {
+    if(done) {
+      return "fa fa-check-circle";
+    } else {
+      return "fa fa-times-circle";
+    }
+  }
+
   return (
     <div className="rectangle">
       <p className="title">TO DO LIST</p>
@@ -72,7 +81,7 @@ render() {
         <tbody>
           <tr>
             <td>
-              <i className={`fa fa-${task[0].done ? "check" : "times"}-circle`} />
+              <i className={statusIcon(task[0].done)} />
             </td>
             <td>{tasks[0].task}</td>
             <td className={task[0].priority}>{task[0].priority.toUpperCase()}</td>
