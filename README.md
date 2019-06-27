@@ -2,7 +2,6 @@
 2. Copy `div.rectangle` into `render`
 
 ```javascript
-render() {
   return (
     <div class="rectangle">
       <p class="title">TO DO LIST</p>
@@ -11,13 +10,11 @@ render() {
       </table>
     </div>
   );
-}
 ```
 
 3. Change `className`
 
 ```javascript
-render() {
   return (
     <div className="rectangle">
       <p className="title">TO DO LIST</p>
@@ -26,7 +23,6 @@ render() {
       </table>
     </div>
   );
-}
 ```
 
 4. Import from `data.js`
@@ -38,7 +34,6 @@ import tasks from "./data";
 5. Fill in rows manually using indexed data
 
 ```javascript
-render() {
   return (
     <div className="rectangle">
       <p className="title">TO DO LIST</p>
@@ -57,13 +52,12 @@ render() {
       </table>
     </div>
   );
-}
 ```
 
 6. Function for calculating className
 
 ```javascript
-render() {
+ {
 
   const statusIcon = (done) => {
     if(done) {
