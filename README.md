@@ -12,7 +12,7 @@
 
 3. Duplicate - explain the sibling rule!
 
-4. Change `className`
+4. Show the warnings in the console - Change `className`
 
    ```jsx
    return (
