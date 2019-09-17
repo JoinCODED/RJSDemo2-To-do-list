@@ -10,7 +10,9 @@
    );
    ```
 
-3. Change `className`
+3. Duplicate - explain the sibling rule!
+
+4. Change `className`
 
    ```jsx
    return (
@@ -21,13 +23,13 @@
    );
    ```
 
-4. Import from `data.js` - `console.log(tasks)` to show what importing does
+5. Import from `data.js` - `console.log(tasks)` to show what importing does
 
    ```javascript
    import tasks from "./data";
    ```
 
-5. Explain `{}` in JSX - Fill in rows manually using indexed data
+6. Explain `{}` in JSX - Fill in rows manually using indexed data
 
    ```jsx
    return (
@@ -52,7 +54,7 @@
    );
    ```
 
-6. Explain that you can use `{}` ANYWHERE in JSX - Function for calculating className
+7. Explain that you can use `{}` ANYWHERE in JSX - Function for calculating className
 
    ```jsx
    {
