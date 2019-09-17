@@ -23,10 +23,13 @@
    );
    ```
 
-5. Import from `data.js` - `console.log(tasks)` to show what importing does
+5. Import from `data.js` - `console.log(tasks)` to show what importing does.
+
+   This is what's known as **dummy** data. It's mimicking the expected structure of data from the backend.  
+    The goal is to replace this data with actual data from the backend eventually.
 
    ```javascript
-   import tasks from "./data";
+   import items from "./data";
    ```
 
 6. Explain `{}` in JSX - Fill in rows manually using indexed data
@@ -42,9 +45,9 @@
              <td>
                <i className="fa fa-check-circle" />
              </td>
-             <td>{tasks[0].task}</td>
-             <td className={task[0].priority}>
-               {task[0].priority.toUpperCase()}
+             <td>{items[0].task}</td>
+             <td className={items[0].priority}>
+               {items[0].priority.toUpperCase()}
              </td>
            </tr>
            ...
@@ -74,11 +77,11 @@
            <tbody>
              <tr>
                <td>
-                 <i className={statusIcon(task[0].done)} />
+                 <i className={statusIcon(items[0].done)} />
                </td>
-               <td>{tasks[0].task}</td>
-               <td className={task[0].priority}>
-                 {task[0].priority.toUpperCase()}
+               <td>{items[0].task}</td>
+               <td className={items[0].priority}>
+                 {items[0].priority.toUpperCase()}
                </td>
              </tr>
              ...
