@@ -1,89 +1,93 @@
 1. Start with pure HTML
-2. Copy `div.rectangle` into `render`
+2. Copy `div.rectangle` into `render` - "forget" to delete it from `index.html` - show duplication - delete it
 
-```javascript
-  return (
-    <div class="rectangle">
-      <p class="title">TO DO LIST</p>
-      <table>
-        ...
-      </table>
-    </div>
-  );
-```
+   ```javascript
+   return (
+     <div class="rectangle">
+       <p class="title">TO DO LIST</p>
+       <table>...</table>
+     </div>
+   );
+   ```
 
-3. Change `className`
+3. Duplicate - explain the sibling rule!
 
-```javascript
-  return (
-    <div className="rectangle">
-      <p className="title">TO DO LIST</p>
-      <table>
-        ...
-      </table>
-    </div>
-  );
-```
+4. Show the warnings in the console - Change `className`
 
-4. Import from `data.js`
+   ```jsx
+   return (
+     <div className="rectangle">
+       <p className="title">TO DO LIST</p>
+       <table>...</table>
+     </div>
+   );
+   ```
 
-```javascript
-import tasks from "./data";
-```
+5. Import from `data.js` - `console.log(tasks)` to show what importing does.
 
-5. Fill in rows manually using indexed data
+   This is what's known as **dummy** data. It's mimicking the expected structure of data from the backend.  
+    The goal is to replace this data with actual data from the backend eventually.
 
-```javascript
-  return (
-    <div className="rectangle">
-      <p className="title">TO DO LIST</p>
-      <table>
-        <thead>...</thead>
-        <tbody>
-          <tr>
-            <td>
-              <i className="fa fa-check-circle" />
-            </td>
-            <td>{tasks[0].task}</td>
-            <td className={task[0].priority}>{task[0].priority.toUpperCase()}</td>
-          </tr>
-          ...
-        </tbody>
-      </table>
-    </div>
-  );
-```
+   ```javascript
+   import items from "./data";
+   ```
 
-6. Function for calculating className
+6. Explain `{}` in JSX - Fill in rows manually using indexed data
 
-```javascript
- {
+   ```jsx
+   return (
+     <div className="rectangle">
+       <p className="title">TO DO LIST</p>
+       <table>
+         <thead>...</thead>
+         <tbody>
+           <tr>
+             <td>
+               <i className="fa fa-check-circle" />
+             </td>
+             <td>{items[0].task}</td>
+             <td className={items[0].priority}>
+               {items[0].priority.toUpperCase()}
+             </td>
+           </tr>
+           ...
+         </tbody>
+       </table>
+     </div>
+   );
+   ```
 
-  const statusIcon = (done) => {
-    if(done) {
-      return "fa fa-check-circle";
-    } else {
-      return "fa fa-times-circle";
-    }
-  }
+7. Explain that you can use `{}` ANYWHERE in JSX - Function for calculating className
 
-  return (
-    <div className="rectangle">
-      <p className="title">TO DO LIST</p>
-      <table>
-        <thead>...</thead>
-        <tbody>
-          <tr>
-            <td>
-              <i className={statusIcon(task[0].done)} />
-            </td>
-            <td>{tasks[0].task}</td>
-            <td className={task[0].priority}>{task[0].priority.toUpperCase()}</td>
-          </tr>
-          ...
-        </tbody>
-      </table>
-    </div>
-  );
-}
-```
+   ```jsx
+   {
+     const statusIcon = done => {
+       if (done) {
+         return "fa fa-check-circle";
+       } else {
+         return "fa fa-times-circle";
+       }
+     };
+
+     return (
+       <div className="rectangle">
+         <p className="title">TO DO LIST</p>
+         <table>
+           <thead>...</thead>
+           <tbody>
+             <tr>
+               <td>
+                 <i className={statusIcon(items[0].done)} />
+               </td>
+               <td>{items[0].task}</td>
+               <td className={items[0].priority}>
+                 {items[0].priority.toUpperCase()}
+               </td>
+             </tr>
+             ...
+           </tbody>
+         </table>
+       </div>
+     );
+   }
+   ```
