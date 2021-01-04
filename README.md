@@ -1,5 +1,13 @@
 1. Start with pure HTML
-2. Copy `div.rectangle` into `render` - "forget" to delete it from `index.html` - show duplication - delete it
+
+   ```javascript
+   return (
+       <p class="title">TO DO LIST</p>
+       <table>...</table>
+   );
+   ```
+
+2. ERROR - explain the sibling rule!
 
    ```javascript
    return (
@@ -9,8 +17,6 @@
      </div>
    );
    ```
-
-3. Duplicate - explain the sibling rule!
 
 4. Show the warnings in the console - Change `className`
 
