@@ -1,4 +1,78 @@
-1. Start with pure HTML
+1. Put this styling in `App.css`
+
+   ```javascript
+   body,
+   html {
+     height: 100%;
+   }
+
+   body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 30px;
+   }
+
+   table {
+     text-align: center;
+     width: 100%;
+     font-size: 20px;
+     align-items: center;
+   }
+
+   thead > tr {
+     height: 50px;
+     font-weight: bold;
+   }
+
+   tr {
+     height: 40px;
+     align-items: center;
+   }
+
+   td.low {
+     color: green;
+   }
+
+   td.middle {
+     color: orange;
+   }
+
+   td.high {
+     color: red;
+   }
+
+   .rectangle {
+     position: relative;
+     width: 370px;
+     height: 700px;
+     border: 2px solid;
+     text-align: center;
+     color: black;
+   }
+
+   .title {
+     color: white;
+     font-family: menlo;
+     background-color: black;
+     height: 80px;
+     width: 370px;
+     margin: 0px;
+     padding-top: 40px;
+     font-size: 40px;
+     margin-bottom: 10px;
+   }
+
+   .fa-check-circle {
+     color: green;
+   }
+
+   .fa-times-circle {
+     color: red;
+   }
+   ```
+
+2. Start with pure HTML
 
    ```javascript
    return (
@@ -7,7 +81,7 @@
    );
    ```
 
-2. ERROR - explain the sibling rule!
+3. ERROR - explain the sibling rule!
 
    ```javascript
    return (
@@ -67,7 +141,7 @@
 
    ```jsx
    {
-     const statusIcon = done => {
+     const statusIcon = (done) => {
        if (done) {
          return "fa fa-check-circle";
        } else {
